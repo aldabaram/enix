@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Connexion</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="boite_connexion">
+      <h1>Connexion</h1>
+      <form id="connexionForm">
+        <div class="textbox">
+          <input
+            type="text"
+            placeholder="Nom d'utilisateur"
+            name="username"
+            id="username"
+            value=""
+          />
+        </div>
+        <div class="textbox">
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            name="password"
+            id="password"
+            value=""
+          />
+        </div>
+        <button type="submit" class="btn">Connexion</button>
+      </form>
+      <div id="message"></div>
+    </div>
+    <script>
+      document
+        .getElementById("connexionForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          fetch("/connexion", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                window.location.href = "/enix";
+              } else {
+                document.getElementById("message").innerText =
+                  "Nom d'utilisateur ou mot de passe incorrect.";
+              }
+            })
+            .catch((error) => console.error("Error:", error));
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+/* centrage du formulaire de connexion class boite_connexion d'une largeur minimale plus 10 pixels*/
+/* Misen eplace d'un dégardé de couleurs pales en fond */
+/* Mise en place d'un dégradé de couleur bleu sur le bouton de connexion */
+/* Mise en place d'un effet de survol sur le bouton de connexion */
+/* Mise en place d'un effet de survol sur les liens */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url(phoenix_fond.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.boite_connexion {
+  width: 320px;
+  height: 420px;
+  /* background: #f9f9f9; */
+  background-color: #ec6565;
+  color: #333;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  border: none;
+  border-radius: 10px;
+}
+
+.boite_connexion input {
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  background: transparent;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  transition: border-bottom-color 0.5s ease;
+}
+
+.boite_connexion input:focus {
+  border-bottom-color: #ff0000;
+}
+
+.boite_connexion button {
+  background: #a13f3f;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.boite_connexion button:hover {
+  background: #b41d1d;
+}
+
+.boite_connexion a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.boite_connexion a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+}
